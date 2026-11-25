@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>PathFinder — Eksplorasi Jurusan, Minat & Jalur Karier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-badge">PF</span>
+        <div>
+          <h1>PathFinder</h1>
+          <p>Panduan Penjurusan, Minat & Kemampuan</p>
+        </div>
+      </div>
+      <span class="pill pill-rainbow">Mode Simulasi • Interaktif</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Bagian Awalan / Edukasi Sebelum Kuis -->
+    <section id="intro-section">
+      <div class="card hero-card">
+        <span class="eyebrow">Langkah 1 • Pahami Dulu Sebelum Memilih</span>
+        <h2>Kenali Minat & Kemampuanmu Sebelum Menentukan Jurusan</h2>
+        <p class="lead">
+          Memilih jurusan kuliah atau jalur karier bukan soal ikut-ikutan tren atau pilihan teman.
+          Keputusan yang matang lahir dari perpaduan antara hal yang <strong>kamu sukai (minat)</strong>,
+          hal yang <strong>mudah kamu kuasai dan kembangkan (kemampuan)</strong>, serta gambaran
+          <strong>aktivitas belajar dan prospek kerja</strong> di masa depan.
+        </p>
+
+        <div class="sim-profile">
+          <label for="student-name">Nama / Inisial Simulasi (Opsional)</label>
+          <input
+            type="text"
+            id="student-name"
+            placeholder="Contoh: Siswa Simulasi A"
+            maxlength="40"
+          />
+        </div>
+
+        <div class="hero-cta-row">
+          <button id="start-btn" class="btn btn-primary" type="button">
+            Lanjut ke Kuis Pemetaan (8 Soal)
+          </button>
+          <a href="#panduan-edukasi" class="btn btn-soft">Baca Panduan Singkat</a>
+        </div>
+      </div>
+
+      <!-- Blok Informasi Edukatif Penjurusan, Minat & Kemampuan -->
+      <div id="panduan-edukasi" class="card info-card">
+        <h3>Apa Saja yang Perlu Dipahami Sebelum Memilih Jurusan?</h3>
+        <div class="edu-grid">
+          <article class="edu-box edu-blue">
+            <h4>1. Minat vs. Kemampuan</h4>
+            <p>
+              <strong>Minat</strong> adalah dorongan rasa ingin tahu terhadap suatu topik (misalnya
+              suka membaca isu ekonomi atau cara kerja aplikasi). <strong>Kemampuan</strong> adalah
+              keterampilan yang tumbuh lewat latihan (seperti menyusun argumen, mengolah angka, atau
+              memecahkan masalah). Keduanya paling kuat saat saling melengkapi.
+            </p>
+          </article>
+
+          <article class="edu-box edu-purple">
+            <h4>2. Salah Kaprah Umum Penjurusan</h4>
+            <p>
+              Banyak siswa mengira satu jurusan hanya mengarah ke satu profesi saja, atau memilih
+              jurusan karena gengsi. Padahal, banyak karier modern bersifat lintas bidang—misalnya
+              menggabungkan <em>analisis data</em> dengan <em>bisnis</em>, atau <em>komunikasi</em>
+              dengan <em>teknologi</em>.
+            </p>
+          </article>
+
+          <article class="edu-box edu-emerald">
+            <h4>3. Cara Membaca Hasil Kuis Ini</h4>
+            <p>
+              Kuis ini memetakan kecenderunganmu ke dalam <strong>4 klaster utama</strong>. Hasilnya
+              bukan vonis mutlak, melainkan <strong>peta awal</strong> untuk membantumu mengenali
+              kekuatan dominan, jurusan yang relevan, dan langkah latihan 0–6 bulan ke depan.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <!-- 4 Klaster yang Akan Dibahas -->
+      <div class="card clusters-preview-card">
+        <h3>4 Klaster Minat & Kemampuan yang Akan Diukur</h3>
+        <p class="muted-intro">
+          Setiap klaster memiliki 2 pertanyaan situasional. Jawablah sesuai kebiasaan aslimu, bukan
+          jawaban yang dianggap paling "ideal".
+        </p>
+        <div class="cluster-cards-grid">
+          <div class="mini-cluster c-logic">
+            <span class="mini-tag">Klaster 1</span>
+            <h4>Logika & Sistem</h4>
+            <p>Menyusun alur kerja terstruktur, logika pemecahan masalah, dan sistem teknologi.</p>
+          </div>
+          <div class="mini-cluster c-data">
+            <span class="mini-tag">Klaster 2</span>
+            <h4>Analisis Data & Riset</h4>
+            <p>Membaca angka, grafik, pola tren, serta menarik kesimpulan berbasis data.</p>
+          </div>
+          <div class="mini-cluster c-comm">
+            <span class="mini-tag">Klaster 3</span>
+            <h4>Komunikasi & Sosial</h4>
+            <p>Menyampaikan ide, berdiskusi, memahami perspektif orang lain, dan kerja tim.</p>
+          </div>
+          <div class="mini-cluster c-biz">
+            <span class="mini-tag">Klaster 4</span>
+            <h4>Bisnis & Ekonomi</h4>
+            <p>Mengelola sumber daya, anggaran, strategi usaha, dan membaca peluang pasar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian 2: Area Kuis Interaktif -->
+    <section id="quiz-section" class="card hidden" aria-live="polite">
+      <div class="quiz-top-bar">
+        <button id="back-to-intro-btn" class="btn-link" type="button">
+          ← Kembali ke Panduan Awal
+        </button>
+        <span id="question-cluster" class="cluster-badge">Klaster</span>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progress-text">Pertanyaan 1 dari 8</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <h3 id="question-text" class="question-text">Teks pertanyaan...</h3>
+      <p id="question-hint" class="question-hint"></p>
+
+      <div id="options-container" class="options-grid"></div>
+
+      <div id="validation-msg" class="alert hidden" role="alert">
+        Pilih salah satu tingkat kesesuaian terlebih dahulu sebelum melanjutkan.
+      </div>
+
+      <div class="quiz-actions">
+        <button id="prev-btn" class="btn btn-secondary" type="button">
+          Sebelumnya
+        </button>
+        <button id="next-btn" class="btn btn-primary" type="button">
+          Selanjutnya
+        </button>
+      </div>
+    </section>
+
+    <!-- Bagian 3: Area Hasil Real-Time -->
+    <section id="result-section" class="hidden">
+      <div class="card result-header">
+        <span class="pill pill-rainbow">Analisis Profil Minat & Kemampuan</span>
+        <h2 id="result-greeting">Rekomendasi untuk Kamu</h2>
+        <p id="result-summary" class="muted"></p>
+        <div id="scores-breakdown" class="scores-list"></div>
+      </div>
+
+      <div id="recommendations-container" class="recs-grid"></div>
+
+      <div class="card roadmap-card">
+        <h3>Roadmap Langkah Awal (0–6 Bulan)</h3>
+        <p class="muted-intro">
+          Gunakan langkah kecil berikut sebagai latihan nyata sebelum menentukan pilihan akhir:
+        </p>
+        <ul id="roadmap-list" class="roadmap-list"></ul>
+      </div>
+
+      <div class="result-footer-actions">
+        <button id="retry-btn" class="btn btn-primary" type="button">
+          Ulangi Tes
+        </button>
+        <button id="home-btn" class="btn btn-soft" type="button">
+          Kembali ke Halaman Awal
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p>
+        PathFinder • Proyek Edukasi Menggunakan Data Simulasi (Tanpa Data Pribadi / API Key).
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
